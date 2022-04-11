@@ -33,20 +33,26 @@ public class Main {
 
   private void tilføjSvarTilStatistik() {
     System.out.println("Hvilken ting vil du helst have med på en øde ø?");
+
     for (int i = 0; i < svarMuligheder.length; i++) {
       System.out.println((i + 1) + " " + svarMuligheder[i]);
     }
+
     int brugerSvar = keyboard.nextInt();
 
+    //kun svar mellem 0 og 10 kan bruges
     if (brugerSvar <= 10 && brugerSvar > 0) {
-      ødeØSvar[brugerSvar - 1] += 1;
+      tilføjStemmeTilSvar(brugerSvar);
     } else {
       tilføjSvarTilStatistik();
     }
   }
 
+  private void tilføjStemmeTilSvar (int indexNr) {
+    ødeØSvar[indexNr - 1] ++;
+  }
+
   public static void main(String[] args) {
-    // write your code here
     new Main().menu();
   }
 }
