@@ -10,7 +10,7 @@ public class Main {
   private void menu() {
     int brugerSvar = 0;
     while (brugerSvar != 3) {
-      System.out.println("velkommen til den øde ø statistikprogrammet. ");
+      System.out.println("\nVelkommen til den øde ø statistikprogrammet. ");
       System.out.println("Indtast 1 for tilføjelse af nye svar");
       System.out.println("Indtast 2 for statistik af svar");
       System.out.println("Indtast 3 for at slutte programmet");
@@ -29,7 +29,6 @@ public class Main {
     for (int i = 0; i < svarMuligheder.length; i++) {
       System.out.println(svarMuligheder[i] + " " + ødeØSvar[i]);
     }
-      System.out.println();
   }
 
   private void tilføjSvarTilStatistik() {
@@ -38,12 +37,12 @@ public class Main {
       System.out.println((i + 1) + " " + svarMuligheder[i]);
     }
     int brugerSvar = keyboard.nextInt();
+
     if (brugerSvar <= 10 && brugerSvar > 0) {
       ødeØSvar[brugerSvar - 1] += 1;
     } else {
       tilføjSvarTilStatistik();
     }
-    System.out.println();
   }
 
   public static void main(String[] args) {
