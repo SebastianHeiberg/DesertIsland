@@ -13,11 +13,11 @@ public class Main {
       System.out.println("\nVelkommen til den øde ø statistikprogrammet. ");
       System.out.println("Indtast 1 for tilføjelse af nye svar");
       System.out.println("Indtast 2 for statistik af svar");
-      System.out.println("Indtast 3 for at slutte programmet");
+      System.out.println("Indtast 3 for at afslutte programmet");
       brugerSvar = keyboard.nextInt();
 
       if (brugerSvar == 1) {
-        tilføjSvarTilStatistik();
+        tilføjNytSvar();
       } else if (brugerSvar == 2) {
         seSvarStatistik();
       }
@@ -31,24 +31,24 @@ public class Main {
     }
   }
 
-  private void tilføjSvarTilStatistik() {
+  private void tilføjNytSvar() {
     System.out.println("Hvilken ting vil du helst have med på en øde ø?");
 
     for (int i = 0; i < svarMuligheder.length; i++) {
       System.out.println((i + 1) + " " + svarMuligheder[i]);
     }
 
-    int brugerSvar = keyboard.nextInt();
+    int brugerStemme = keyboard.nextInt();
 
     //kun svar mellem 0 og 10 kan bruges
-    if (brugerSvar <= 10 && brugerSvar > 0) {
-      tilføjStemmeTilSvar(brugerSvar);
+    if (brugerStemme <= 10 && brugerStemme > 0) {
+      tilføjStemmeTilSvarListe(brugerStemme);
     } else {
-      tilføjSvarTilStatistik();
+      tilføjNytSvar();
     }
   }
 
-  private void tilføjStemmeTilSvar (int indexNr) {
+  private void tilføjStemmeTilSvarListe(int indexNr) {
     ødeØSvar[indexNr - 1] ++;
   }
 
