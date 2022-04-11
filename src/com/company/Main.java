@@ -38,7 +38,11 @@ public class Main {
       System.out.println((i + 1) + " " + svarMuligheder[i]);
     }
     int brugerSvar = keyboard.nextInt();
-    ødeØSvar[brugerSvar - 1] += 1;
+    if (brugerSvar <= 10 && brugerSvar > 0) {
+      ødeØSvar[brugerSvar - 1] += 1;
+    } else {
+      tilføjSvarTilStatistik();
+    }
     System.out.println();
   }
 
